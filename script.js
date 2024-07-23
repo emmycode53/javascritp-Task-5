@@ -34,7 +34,7 @@ function switchPlayer() {
         currentScore2.textContent = currentScore;
         activePlayer = 1;
     }
-    dice.classList.add('hidden');
+
 }
 
 
@@ -42,9 +42,11 @@ function checkWinner() {
     if (scores[0] >= 100) {
         player1.classList.add('player--winner');
         player1.style.backgroundColor = 'green';
+        document.getElementById('name--0').textContent='player 1 is the winner';
         gameActive = false;
     } else if (scores[1] >= 100) {
         player2.classList.add('player--winner');
+        document.getElementById('name--1').textContent='player 2 is the winner';
         player2.style.backgroundColor = 'green';
         gameActive = false;
     }
@@ -59,7 +61,7 @@ rollBtn.addEventListener('click', function() {
         
         if (number === 1) {
             
-            if (activePlayer === 1) {
+    if (activePlayer === 1) {
                 currentScore1.textContent = 0;
             } else {
                 currentScore2.textContent = 0;
@@ -107,6 +109,8 @@ newGameBtn.addEventListener('click', function() {
     playerScore2.textContent = 0;
     currentScore1.textContent = 0;
     currentScore2.textContent = 0;
+    document.getElementById('name--0').textContent='player1'
+    document.getElementById('name--1').textContent='player2'
     currentScore = 0;
     activePlayer = 1;
     gameActive = true;
@@ -115,3 +119,5 @@ newGameBtn.addEventListener('click', function() {
     player2.classList.remove('player--winner');
     player1.style.backgroundColor = '';
     player2.style.backgroundColor = '';})
+
+    
