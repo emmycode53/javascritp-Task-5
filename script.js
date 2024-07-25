@@ -9,6 +9,10 @@ const newGameBtn = document.querySelector('.btn--new');
 const player1 = document.querySelector('.player--0'); 
 const player2 = document.querySelector('.player--1'); 
 
+const player0ELL=document.querySelector('.player--0');
+const player1ELL=document.querySelector('.player--1');
+
+
 
 let currentScore = 0;
 let activePlayer = 1; 
@@ -33,6 +37,8 @@ function switchPlayer() {
     } else {
         currentScore2.textContent = currentScore;
         activePlayer = 1;
+        player0ELL.classList.toggle('player--active');
+        player1ELL.classList.toggle('player--active');
     }
 
 }
